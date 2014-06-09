@@ -1,6 +1,6 @@
 name: RealPing
 version: 0.1.1
-author: mouseymars
+author: teammoo
 description: A simple plugin that lets you throw custard pies at players
 website: http://github.com/iaidan/custardpie
 main: net.aidantaylor.custardpie.CustardPie
