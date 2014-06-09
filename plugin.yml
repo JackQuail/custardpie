@@ -1,0 +1,23 @@
+name: RealPing
+version: 0.1.1
+author: mouseymars
+description: A simple plugin that lets you throw custard pies at players
+website: http://github.com/iaidan/custardpie
+main: net.aidantaylor.custardpie.CustardPie
+commands:
+   custardpie:
+     description: Throw custard pies at other players!
+     aliases: [custardpie]
+permissions:
+  custardpie.throw:
+     description: 'Allows a player to throw a custard pie'
+     default: true
+  custardpie.create:
+     description: 'Allows a player to create a custard pie'
+     default: true
+  custardpie.spawn:
+     description: 'Allows a player to spawn a custard pie by doing /pie'
+     default: op
+  custardpie.spawn.multi:
+     description: 'Allows a player to spawn multiple custard pies by doing /pie [number]'
+     default: op
