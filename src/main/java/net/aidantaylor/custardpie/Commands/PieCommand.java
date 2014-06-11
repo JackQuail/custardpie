@@ -6,6 +6,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 public class PieCommand implements CommandExecutor{
 
@@ -20,7 +21,18 @@ public class PieCommand implements CommandExecutor{
 		if(cmd.getName().equalsIgnoreCase("custardpie")){
 			
 			Player player = (Player) sender;
-			player.getInventory().addItem(Items.custardPie);
+			// Give the player a custard pie.
+			ItemStack c = Items.custardPie.clone();
+			
+			// If there are args, set the amount of pies to that
+			if(args.length >= 1){
+				
+				String amount = args[0];
+				
+				c.setAmount(Integer.parseInt(amount));
+			}
+			
+			player.getInventory().addItem(c);
 			
 			return true;
 		}

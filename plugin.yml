@@ -1,6 +1,5 @@
 name: CustardPie
-depend: [flyingblocksapi]
-version: 0.1.1
+version: 1.0
 author: TeamMoo
 description: A simple plugin that lets you throw custard pies at players
 website: http://github.com/iaidan/custardpie

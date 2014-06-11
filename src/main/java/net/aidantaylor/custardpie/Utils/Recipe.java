@@ -2,7 +2,6 @@ package net.aidantaylor.custardpie.Utils;
 
 import net.aidantaylor.custardpie.Main;
 
-import org.bukkit.DyeColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapelessRecipe;
