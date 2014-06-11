@@ -7,9 +7,12 @@ import org.bukkit.event.player.PlayerItemConsumeEvent;
 
 public class Consume implements Listener {
 	
-	public void onConsume(PlayerItemConsumeEvent event){
-		if(event.getItem().isSimilar(Items.custardPie)) {
+	@SuppressWarnings("deprecation")
+	public void onConsume(PlayerItemConsumeEvent event) {
+		if(event.getPlayer().getItemInHand().isSimilar(Items.custardPie)) {
 			 event.setCancelled(true);
+			 event.getPlayer().setItemInHand(event.getPlayer().getItemInHand());
+			 event.getPlayer().updateInventory();
 		}
 	}
 
