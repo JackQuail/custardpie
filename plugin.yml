@@ -7,7 +7,7 @@ main: net.aidantaylor.custardpie.Main
 commands:
    custardpie:
      description: Throw custard pies at other players!
-     aliases: [custardpie]
+     aliases: [cpie]
 permissions:
   custardpie.throw:
      description: 'Allows a player to throw a custard pie'
