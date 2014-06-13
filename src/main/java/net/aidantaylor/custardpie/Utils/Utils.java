@@ -5,6 +5,7 @@ import net.aidantaylor.custardpie.Particles.ParticleEffect;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Snowball;
@@ -19,6 +20,13 @@ public class Utils {
 
 	public static void throwCustardPie(Player player){
 		final Snowball s = player.launchProjectile(Snowball.class);
+		for(Entity e : player.getNearbyEntities(5, 5, 5)){
+			if(!(e instanceof Player )) continue;
+			Player tPlayer = (Player) e;
+			tPlayer.playSound(tPlayer.getLocation(), Sound.BAT_TAKEOFF, 2, 5);
+		}
+		
+		player.playSound(player.getLocation(), Sound.BAT_TAKEOFF, 2, 5);
 		new BukkitRunnable(){
 			@Override
 			public void run() {

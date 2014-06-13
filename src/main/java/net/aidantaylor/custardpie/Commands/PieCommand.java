@@ -18,7 +18,7 @@ public class PieCommand implements CommandExecutor{
 			return true;
 		}
 		
-		if(cmd.getName().equalsIgnoreCase("custardpie")){
+		if(cmd.getName().equalsIgnoreCase("custardpie") || cmd.getName().equalsIgnoreCase("cpie")){
 			
 			Player player = (Player) sender;
 			// Give the player a custard pie.
