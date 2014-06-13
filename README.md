@@ -7,14 +7,15 @@ Bukkit Minecraft Server Mod, http://bukkit.org
 
 <h3>Features</h3>
 <ul>
-  <li>View your ping to the server</li>
-  <li>View other players pings to the server</li>
+  <li>Custard Pies in Minecraft</li>
+  <li>Craft Custard pies</li>
+  <li>Throw Custard pies</li>
 </ul>
 <h3>Installation</h3>
 <ol>
   <li>Move CustardPie.jar into the /plugins folder</li>
   <li>Restart Bukkit</li>
-  <li>(Optional) Stop Bukkit and edit the /plugins/realping/config.yml file</li>
+  <li>(Optional) Stop Bukkit and edit the /plugins/custardpie/config.yml file</li>
 </ol>
 <h3>Commands and Permissions</h3>
 <table>
