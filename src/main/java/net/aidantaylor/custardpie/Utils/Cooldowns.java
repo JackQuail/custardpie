@@ -1,7 +1,5 @@
-package net.aidantaylor.custardpie.Utils;
+package net.aidantaylor.custardpie.utils;
 
 public class Cooldowns {
 
-	
-	
 }
