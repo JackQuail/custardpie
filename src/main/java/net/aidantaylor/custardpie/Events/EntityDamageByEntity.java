@@ -1,5 +1,6 @@
 package net.aidantaylor.custardpie.Events;
 
+import net.aidantaylor.custardpie.Utils.Chat;
 import net.aidantaylor.custardpie.Utils.Utils;
 
 import org.bukkit.Sound;
@@ -27,8 +28,8 @@ public class EntityDamageByEntity implements Listener {
 
 		Player damager = (Player) snowball.getShooter();
 		
-		Utils.sendMessage(hit, "&9&l" + damager.getName() + " &bjust pied you!");
-		Utils.sendMessage(damager, "&bYou pied &9&l" + hit.getName() + "!");
+		Chat.sendMessage(hit, "&9&l" + damager.getName() + " &bjust pied you!");
+		Chat.sendMessage(damager, "&bYou pied &9&l" + hit.getName() + "!");
 		
 		hit.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 20, 3));
 

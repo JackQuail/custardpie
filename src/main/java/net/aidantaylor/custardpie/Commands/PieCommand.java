@@ -1,5 +1,6 @@
 package net.aidantaylor.custardpie.Commands;
 
+import net.aidantaylor.custardpie.Utils.Chat;
 import net.aidantaylor.custardpie.Utils.Items;
 
 import org.bukkit.command.Command;
@@ -21,21 +22,37 @@ public class PieCommand implements CommandExecutor{
 		if(cmd.getName().equalsIgnoreCase("custardpie") || cmd.getName().equalsIgnoreCase("cpie")){
 			
 			Player player = (Player) sender;
-			// Give the player a custard pie.
-			ItemStack c = Items.custardPie.clone();
-			
-			// If there are args, set the amount of pies to that
-			if(args.length >= 1){
-				
-				String amount = args[0];
-				
-				c.setAmount(Integer.parseInt(amount));
-			}
-			
-			player.getInventory().addItem(c);
-			
-			return true;
-		}
+
+            if (!player.hasPermission("custardpie.spawn"))
+            {
+                Chat.sendMessage(player, "&cYou do not have permission to use this command!");
+                return true;
+            }
+
+            ItemStack c = Items.custardPie.clone();
+
+            if (player.hasPermission("custardpie.spawn.multi"))
+            {
+                String amount = args[0];
+
+                c.setAmount(Integer.parseInt(amount));
+
+
+                Chat.sendMessage(player, "&eYou have received &6" + amount + " &epies!");
+
+                player.getInventory().addItem(new ItemStack[] { c });
+
+                return true;
+            }else{
+                Chat.sendMessage(player, "&cYou do not have permission to use this command!");
+                return true;
+            }
+        player.getInventory().addItem(c);
+
+        Chat.sendMessage(player, "&eEnjoy your custard pie!");
+        return true;
+
+    }
 		
 		return false;
 	}

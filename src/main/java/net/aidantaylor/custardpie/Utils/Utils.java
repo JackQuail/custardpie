@@ -25,7 +25,7 @@ public class Utils {
 			Player tPlayer = (Player) e;
 			tPlayer.playSound(tPlayer.getLocation(), Sound.BAT_TAKEOFF, 2, 5);
 		}
-		
+
 		player.playSound(player.getLocation(), Sound.BAT_TAKEOFF, 2, 5);
 		new BukkitRunnable(){
 			@Override
@@ -35,10 +35,10 @@ public class Utils {
 					this.cancel();
 					return;
 				}
-				
+
 				ParticleEffect.CRIT.display(l, 0, 0, 0, (float) 0.3, 3);
 				ParticleEffect.displayBlockDust(l, 35, (byte) 1, 0, 0, 0, (float) 0.05, 3);
-				
+
 				final Entity d = l.getWorld().dropItem(l, new ItemStack(Material.INK_SACK,1,(short) 11));
 				new BukkitRunnable(){
 					public void run(){
@@ -48,12 +48,6 @@ public class Utils {
 			}
 		}.runTaskTimer(Main.instance,0L,0L);
 
-		sendMessage(player,"&bYou just threw a custard pie!");
+		Chat.sendMessage(player,"&bYou just threw a custard pie!");
 	}
-
-	public static void sendMessage(Player player, String message){
-		player.sendMessage(message.replaceAll("&","§"));
-	}
-
-
 }
