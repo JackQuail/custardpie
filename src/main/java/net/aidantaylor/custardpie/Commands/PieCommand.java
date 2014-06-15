@@ -19,7 +19,7 @@ public class PieCommand implements CommandExecutor {
 					sender.sendMessage(ChatColor.RED + "You don't have permission for this command!");
 				}
 			} else if (sender.hasPermission("custardpie.spawn.multi")) {
-				int amount = new Integer(args[1]);
+				int amount = Integer.parseInt(args[0]);
 				
 				if (amount < 1) {
 					sender.sendMessage(ChatColor.RED + "You cant have " + amount + " pies!");
