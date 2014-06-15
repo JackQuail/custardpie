@@ -1,8 +1,10 @@
-package net.aidantaylor.custardpie.utils;
+package net.aidantaylor.custardpie.Utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -14,21 +16,19 @@ public class Items {
 		ItemStack itemStack = new ItemStack(mat, amount, (short) damage);
 
 		ItemMeta itemMeta = itemStack.getItemMeta();
-		itemMeta.setDisplayName(name.replaceAll("&", "§"));
+		itemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
 		List<String> list = new ArrayList<String>();
 		
 		if (lore.contains("\n")) {
 			for (String next : lore.split("\n")) {
-				list.add(next.replaceAll("&", "§"));
+				list.add(ChatColor.translateAlternateColorCodes('&', next));
 			}
-			
 			itemMeta.setLore(list);
 		} else {
-			itemMeta.setLore(Arrays.asList(new String[] {
-					lore.replaceAll("&", "§")
-			}));
+			itemMeta.setLore(Arrays.asList(ChatColor.translateAlternateColorCodes('&', lore)));
 		}
 		
+
 		itemStack.setItemMeta(itemMeta);
 		return itemStack;
 	}
