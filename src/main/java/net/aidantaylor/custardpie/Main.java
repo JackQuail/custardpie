@@ -5,6 +5,7 @@ import net.aidantaylor.custardpie.events.Consume;
 import net.aidantaylor.custardpie.events.EntityDamageByEntity;
 import net.aidantaylor.custardpie.events.PlayerInteract;
 import net.aidantaylor.custardpie.utils.Recipe;
+import net.aidantaylor.custardpie.utils.Utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
@@ -33,6 +34,10 @@ public final class Main extends JavaPlugin {
 	public void onDisable() {
 		/** Clear Recipes */
 		Bukkit.clearRecipes();
+		
+		for(int i = 0; i < Utils.pies.size(); i++) {
+			Utils.pies.get(i).remove();
+		}
 	}
 	
 	public void load() {

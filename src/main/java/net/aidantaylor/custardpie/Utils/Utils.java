@@ -1,7 +1,10 @@
 package net.aidantaylor.custardpie.utils;
 
+import java.util.ArrayList;
+
 import net.aidantaylor.custardpie.Main;
 import net.aidantaylor.custardpie.particles.ParticleEffect;
+
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -12,10 +15,8 @@ import org.bukkit.entity.Snowball;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
-/**
- * Created by CaLxCyMru on 10/06/2014.
- */
 public class Utils {
+	public static ArrayList<Entity> pies = new ArrayList<Entity>();
 
 	public static void throwCustardPie(Player player) {
 		final Snowball s = player.launchProjectile(Snowball.class);
@@ -41,11 +42,13 @@ public class Utils {
 				ParticleEffect.CRIT.display(l, 0, 0, 0, (float) 0.3, 3);
 				ParticleEffect.displayBlockDust(l, 35, (byte) 1, 0, 0, 0, (float) 0.05, 3);
 
-				final Entity d = l.getWorld().dropItem(l, new ItemStack(Material.INK_SACK, 1, (short) 11));
+				final Entity pie = l.getWorld().dropItem(l, new ItemStack(Material.INK_SACK, 1, (short) 11));
+				pies.add(pie);
 				
 				new BukkitRunnable() {
 					public void run() {
-						d.remove();
+						pies.remove(pie);
+						pie.remove();
 					}
 				}.runTaskLater(Main.instance, 4L);
 			}
