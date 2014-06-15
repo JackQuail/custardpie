@@ -1,4 +1,4 @@
-package net.aidantaylor.custardpie.Particles;
+package net.aidantaylor.custardpie.particles;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;

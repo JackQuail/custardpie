@@ -1,4 +1,4 @@
-package net.aidantaylor.custardpie.Particles;
+package net.aidantaylor.custardpie.particles;
 
 /**
  * This class is part of the ReflectionHandler and follows the same usage conditions

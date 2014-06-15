@@ -1,4 +1,4 @@
-package net.aidantaylor.custardpie.Utils;
+package net.aidantaylor.custardpie.utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;

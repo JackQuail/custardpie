@@ -1,4 +1,4 @@
-package net.aidantaylor.custardpie.Particles;
+package net.aidantaylor.custardpie.particles;
 
 import java.util.HashMap;
 import java.util.Map;

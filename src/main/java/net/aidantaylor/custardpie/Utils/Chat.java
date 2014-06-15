@@ -1,4 +1,4 @@
-package net.aidantaylor.custardpie.Utils;
+package net.aidantaylor.custardpie.utils;
 
 import org.bukkit.entity.Player;
 
