@@ -4,6 +4,7 @@ import net.aidantaylor.custardpie.commands.PieCommand;
 import net.aidantaylor.custardpie.events.Consume;
 import net.aidantaylor.custardpie.events.EntityDamageByEntity;
 import net.aidantaylor.custardpie.events.PlayerInteract;
+import net.aidantaylor.custardpie.utils.PieUtils;
 import net.aidantaylor.custardpie.utils.Recipe;
 
 import org.bukkit.Bukkit;
@@ -23,7 +24,7 @@ public final class Main extends JavaPlugin {
 		registerEvents();
 
 		getCommand("custardpie").setExecutor(new PieCommand());
-		
+
 		/** Register recipes */
 		Recipe r = new Recipe();
 		Bukkit.addRecipe(r.pie());
@@ -33,20 +34,24 @@ public final class Main extends JavaPlugin {
 	public void onDisable() {
 		/** Clear Recipes */
 		Bukkit.clearRecipes();
+
+		for(int i = 0; i < PieUtils.pies.size(); i++) {
+			PieUtils.pies.get(i).remove();
+		}
 	}
-	
+
 	public void load() {
-		
+
 	}
-	
+
 	@Override
 	public void reloadConfig() {
 		super.reloadConfig();
 		getConfig().options().copyDefaults(true);
-		
+
 		load();
 	}
-	
+
 	public void registerEvents() {
 		/** Register Events */
 		PluginManager pm = getServer().getPluginManager();
@@ -54,11 +59,11 @@ public final class Main extends JavaPlugin {
 		pm.registerEvents(new EntityDamageByEntity(), this);
 		pm.registerEvents(new Consume(), this);
 	}
-	
+
 	public static void log(String string) {
 		log(string, false);
 	}
-	
+
 	public static void log(String string, boolean bypassdebug) {
 		if (bypassdebug == true || debug == true) {
 			Bukkit.getLogger().info(string);
