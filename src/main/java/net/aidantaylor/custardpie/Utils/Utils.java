@@ -15,7 +15,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 /**
  * Created by CaLxCyMru on 10/06/2014.
  */
-public class PieUtils {
+public class Utils {
 
 	public static void throwCustardPie(Player player) {
 		final Snowball s = player.launchProjectile(Snowball.class);

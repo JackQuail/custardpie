@@ -1,7 +1,7 @@
 package net.aidantaylor.custardpie.events;
 
 import net.aidantaylor.custardpie.utils.Items;
-import net.aidantaylor.custardpie.utils.PieUtils;
+import net.aidantaylor.custardpie.utils.Utils;
 
 import org.bukkit.GameMode;
 import org.bukkit.Material;
@@ -24,7 +24,7 @@ public class PlayerInteract implements Listener {
 				return;
 			}
 	
-			PieUtils.throwCustardPie(event.getPlayer());
+			Utils.throwCustardPie(event.getPlayer());
 	
 			if (event.getPlayer().getGameMode() != GameMode.CREATIVE) {
 				ItemStack i = event.getItem();
