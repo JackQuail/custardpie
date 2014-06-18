@@ -15,7 +15,6 @@ Bukkit Minecraft Server Mod, http://bukkit.org
 <ol>
   <li>Move CustardPie.jar into the /plugins folder</li>
   <li>Restart Bukkit</li>
-  <li>(Optional) Stop Bukkit and edit the /plugins/custardpie/config.yml file</li>
 </ol>
 <h3>Commands and Permissions</h3>
 <table>
